@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.springopenapidemo.entity.Customer;
+import com.example.springopenapidemo.entity.CustomerDtoRepository;
 import com.example.springopenapidemo.entity.CustomerRepository;
+import com.example.springopenapidemo.entity.CustomerSaveDto;
 
 @RestController
 @RequestMapping("/api")
@@ -16,8 +18,11 @@ public class CustomerController {
 
     private final CustomerRepository customerRepository;
 
-    public CustomerController(CustomerRepository customerRepository) {
+    private final CustomerDtoRepository customerDtoRepository;
+
+    public CustomerController(CustomerRepository customerRepository, CustomerDtoRepository customerDtoRepository) {
         this.customerRepository = customerRepository;
+        this.customerDtoRepository = customerDtoRepository;
     }
 
     @GetMapping("/customer")
@@ -36,8 +41,8 @@ public class CustomerController {
     }
 
     @PostMapping("/customer")
-    public Customer createCustomer(@RequestBody Customer customer) {
-        return customerRepository.save(customer);
+    public Customer createCustomer(@RequestBody CustomerSaveDto customer) {
+        return customerDtoRepository.save(customer);
     }
 }
 

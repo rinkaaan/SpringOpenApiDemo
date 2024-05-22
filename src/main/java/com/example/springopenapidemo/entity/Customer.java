@@ -1,5 +1,7 @@
 package com.example.springopenapidemo.entity;
 
+import java.util.UUID;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,8 +13,8 @@ import jakarta.persistence.Table;
 public class Customer {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
     private String firstName;
     private String lastName;
 
@@ -27,12 +29,12 @@ public class Customer {
     @Override
     public String toString() {
         return String.format(
-                "Customer[id=%d, firstName='%s', lastName='%s']",
+                "Customer[id=%s, firstName='%s', lastName='%s']",
                 id, firstName, lastName
         );
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
