@@ -4,11 +4,14 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.test.annotation.Commit;
 
 import com.example.springopenapidemo.entity.Customer;
 import com.example.springopenapidemo.entity.CustomerRepository;
 
+@AutoConfigureTestDatabase(replace= AutoConfigureTestDatabase.Replace.NONE)
 @DataJpaTest
 class SpringopenapidemoApplicationTests {
 
@@ -16,6 +19,7 @@ class SpringopenapidemoApplicationTests {
     CustomerRepository customerRepository;
 
     @Test
+    @Commit
     void createCustomer() {
         // Create a new customer
         Customer customer = new Customer("John", "Doe");
@@ -29,6 +33,7 @@ class SpringopenapidemoApplicationTests {
     }
 
 	@Test
+    @Commit
 	void printAllCustomers() {
 		// Create a new customer
         Customer customer = new Customer("John", "Doe");
