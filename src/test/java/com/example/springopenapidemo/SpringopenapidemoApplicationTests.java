@@ -8,8 +8,8 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.annotation.Commit;
 
-import com.example.springopenapidemo.entity.Customer;
-import com.example.springopenapidemo.entity.CustomerRepository;
+import com.example.springopenapidemo.entity.customer.Customer;
+import com.example.springopenapidemo.entity.customer.CustomerRepository;
 
 @AutoConfigureTestDatabase(replace= AutoConfigureTestDatabase.Replace.NONE)
 @DataJpaTest

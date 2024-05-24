@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.springopenapidemo.entity.Customer;
-import com.example.springopenapidemo.entity.CustomerDtoRepository;
-import com.example.springopenapidemo.entity.CustomerRepository;
-import com.example.springopenapidemo.entity.CustomerSaveDto;
+import com.example.springopenapidemo.entity.customer.Customer;
+import com.example.springopenapidemo.entity.customer.CustomerDtoRepository;
+import com.example.springopenapidemo.entity.customer.CustomerRepository;
+import com.example.springopenapidemo.entity.customer.CustomerSaveDto;
 
 @RestController
 @RequestMapping("/api")

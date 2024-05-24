@@ -1,5 +1,5 @@
-flyway.user=postgres
-flyway.password=Ln2121809
-flyway.schemas=demo
+flyway.user=
+flyway.password=
+flyway.schemas=
 flyway.url=jdbc:postgresql://127.0.0.1:5432/postgres
 flyway.locations=filesystem:flyway

@@ -1,4 +1,4 @@
-package com.example.springopenapidemo.entity;
+package com.example.springopenapidemo.entity.customer;
 
 import org.springframework.stereotype.Repository;
 
